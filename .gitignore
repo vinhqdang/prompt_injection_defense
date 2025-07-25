@@ -213,17 +213,17 @@ data/raw/*.csv
 data/processed/*.npy
 data/processed/*.txt
 
-# Model files
-models/saved/*.pkl
-models/saved/*.json
-models/saved/*.pth
-models/saved/*.bin
+# Model files - allowing for reproducibility
+# models/saved/*.pkl
+# models/saved/*.json
+# models/saved/*.pth
+# models/saved/*.bin
 
-# Results and outputs
-results/*.png
-results/*.html
-results/*.txt
-results/*.pkl
+# Results and outputs - allowing for reproducibility and reuse
+# results/*.png
+# results/*.html
+# results/*.txt
+# results/*.pkl
 
 # Temporary files
 *.tmp

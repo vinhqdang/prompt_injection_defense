@@ -1,0 +1,133 @@
+================================================================================
+HOMOMORPHIC ENCRYPTION INTRUSION DETECTION SYSTEM
+DETAILED EVALUATION REPORT
+================================================================================
+
+Report Generated: 2025-07-25 16:28:29
+Test Set Size: 600 samples
+Attack Distribution: 274 attacks, 326 benign
+
+MODEL PERFORMANCE COMPARISON
+--------------------------------------------------------------------------------
+                 Model  Accuracy  Precision   Recall  F1-Score  Inference Time (s)
+         Random Forest  0.993333   0.996324 0.989051  0.992674            0.065833
+               Xgboost  0.993333   0.989130 0.996350  0.992727            0.009697
+         Deep Learning  0.966667   0.944056 0.985401  0.964286            0.009514
+    Homomorphic Simple  0.456667   0.456667 1.000000  0.627002           14.053592
+Homomorphic Polynomial  0.615000   0.552311 0.828467  0.662774           15.307481
+
+
+RANDOM FOREST - DETAILED RESULTS
+--------------------------------------------------
+Classification Report:
+              precision    recall  f1-score   support
+
+      Benign       0.52      0.53      0.53       326
+      Attack       0.43      0.43      0.43       274
+
+    accuracy                           0.48       600
+   macro avg       0.48      0.48      0.48       600
+weighted avg       0.48      0.48      0.48       600
+
+Confusion Matrix:
+True Negatives: 172
+False Positives: 154
+False Negatives: 156
+True Positives: 118
+
+Specificity (True Negative Rate): 0.5276
+False Positive Rate: 0.4724
+False Negative Rate: 0.5693
+
+
+XGBOOST - DETAILED RESULTS
+--------------------------------------------------
+Classification Report:
+              precision    recall  f1-score   support
+
+      Benign       0.52      0.52      0.52       326
+      Attack       0.43      0.44      0.44       274
+
+    accuracy                           0.48       600
+   macro avg       0.48      0.48      0.48       600
+weighted avg       0.48      0.48      0.48       600
+
+Confusion Matrix:
+True Negatives: 170
+False Positives: 156
+False Negatives: 154
+True Positives: 120
+
+Specificity (True Negative Rate): 0.5215
+False Positive Rate: 0.4785
+False Negative Rate: 0.5620
+
+
+DEEP LEARNING - DETAILED RESULTS
+--------------------------------------------------
+Classification Report:
+              precision    recall  f1-score   support
+
+      Benign       0.53      0.51      0.52       326
+      Attack       0.44      0.46      0.45       274
+
+    accuracy                           0.48       600
+   macro avg       0.48      0.48      0.48       600
+weighted avg       0.49      0.48      0.48       600
+
+Confusion Matrix:
+True Negatives: 165
+False Positives: 161
+False Negatives: 149
+True Positives: 125
+
+Specificity (True Negative Rate): 0.5061
+False Positive Rate: 0.4939
+False Negative Rate: 0.5438
+
+
+HOMOMORPHIC SIMPLE - DETAILED RESULTS
+--------------------------------------------------
+Classification Report:
+              precision    recall  f1-score   support
+
+      Benign       0.00      0.00      0.00       326
+      Attack       0.46      1.00      0.63       274
+
+    accuracy                           0.46       600
+   macro avg       0.23      0.50      0.31       600
+weighted avg       0.21      0.46      0.29       600
+
+Confusion Matrix:
+True Negatives: 0
+False Positives: 326
+False Negatives: 0
+True Positives: 274
+
+Specificity (True Negative Rate): 0.0000
+False Positive Rate: 1.0000
+False Negative Rate: 0.0000
+
+
+HOMOMORPHIC POLYNOMIAL - DETAILED RESULTS
+--------------------------------------------------
+Classification Report:
+              precision    recall  f1-score   support
+
+      Benign       0.75      0.44      0.55       326
+      Attack       0.55      0.83      0.66       274
+
+    accuracy                           0.61       600
+   macro avg       0.65      0.63      0.61       600
+weighted avg       0.66      0.61      0.60       600
+
+Confusion Matrix:
+True Negatives: 142
+False Positives: 184
+False Negatives: 47
+True Positives: 227
+
+Specificity (True Negative Rate): 0.4356
+False Positive Rate: 0.5644
+False Negative Rate: 0.1715
+

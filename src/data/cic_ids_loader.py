@@ -36,15 +36,39 @@ class CICIDSLoader:
         ]
         
         dataframes = []
-        for file in csv_files:
-            file_path = os.path.join(self.data_path, file)
-            if os.path.exists(file_path):
-                print(f"Loading {file}...")
-                df = pd.read_csv(file_path)
-                dataframes.append(df)
-            else:
-                print(f"File not found: {file_path}")
         
+        # Check both locations: direct data_path and MachineLearningCVE subdirectory
+        search_paths = [
+            self.data_path,
+            os.path.join(self.data_path, 'MachineLearningCVE')
+        ]
+        
+        for search_path in search_paths:
+            if os.path.exists(search_path):
+                files_found = 0
+                for file in csv_files:
+                    file_path = os.path.join(search_path, file)
+                    if os.path.exists(file_path):
+                        print(f"Loading {file}...")
+                        df = pd.read_csv(file_path)
+                        dataframes.append(df)
+                        files_found += 1
+                        # Load at least 3 files to ensure we get attacks
+                        if files_found >= 3:
+                            break
+                if dataframes:
+                    break  # Found files in this search path
+        
+        if not dataframes:
+            # Try to find any CSV files in the data directory
+            for root, dirs, files in os.walk(self.data_path):
+                for file in files:
+                    if file.endswith('.csv') and any(csv_file in file for csv_file in csv_files):
+                        print(f"Found CSV file: {file}")
+                        file_path = os.path.join(root, file)
+                        df = pd.read_csv(file_path)
+                        dataframes.append(df)
+            
         if not dataframes:
             raise FileNotFoundError("No CSV files found. Please download the dataset first.")
             

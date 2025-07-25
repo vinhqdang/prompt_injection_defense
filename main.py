@@ -65,12 +65,29 @@ def main():
         loader.download_dataset()
         return
     
-    # Sample data if specified
-    if args.sample_size and args.sample_size < len(X_test):
-        print(f"Sampling {args.sample_size} samples for testing...")
-        indices = np.random.choice(len(X_test), args.sample_size, replace=False)
-        X_test = X_test[indices]
-        y_test = y_test[indices]
+    # Sample data if specified (from both training and test sets to maintain balance)
+    if args.sample_size and args.sample_size < len(X_train) + len(X_test):
+        print(f"Sampling {args.sample_size} samples total...")
+        # Combine train and test for balanced sampling
+        X_combined = np.vstack([X_train, X_test])
+        y_combined = np.hstack([y_train, y_test])
+        
+        # Sample with stratification to maintain class balance
+        from sklearn.model_selection import train_test_split
+        X_sampled, _, y_sampled, _ = train_test_split(
+            X_combined, y_combined, 
+            train_size=args.sample_size, 
+            stratify=y_combined, 
+            random_state=42
+        )
+        
+        # Re-split the sampled data
+        X_train, X_test, y_train, y_test = train_test_split(
+            X_sampled, y_sampled, 
+            test_size=args.test_size, 
+            random_state=42, 
+            stratify=y_sampled
+        )
     
     print(f"Final dataset shapes:")
     print(f"Training: {X_train.shape}, Test: {X_test.shape}")

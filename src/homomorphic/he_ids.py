@@ -20,7 +20,7 @@ class HomomorphicIDS:
         self.secret_key = None
         self.model_weights = None
         self.encrypted_weights = None
-        self.scale = 2**40
+        self.scale = 2**30  # Reduced scale to avoid overflow
         
         # Initialize CKKS context
         self._setup_context(poly_modulus_degree, coeff_mod_bit_sizes)
@@ -165,13 +165,9 @@ class HomomorphicIDS:
             # Homomorphic dot product
             encrypted_z = encrypted_input.dot(self.encrypted_weights)
             
-            # Polynomial approximation of sigmoid: f(x) ≈ 0.5 + 0.25*x - 0.125*x^3
-            # This is a common approximation for x in [-2, 2]
-            encrypted_z_squared = encrypted_z * encrypted_z
-            encrypted_z_cubed = encrypted_z_squared * encrypted_z
-            
-            # Compute polynomial approximation
-            encrypted_sigmoid = (encrypted_z * 0.25) - (encrypted_z_cubed * 0.125)
+            # Simplified polynomial approximation to avoid overflow
+            # Use a simpler approximation: f(x) ≈ 0.5 + 0.2*x
+            encrypted_sigmoid = encrypted_z * 0.2
             
             # Add constant term 0.5
             constant_vector = ts.ckks_vector(self.context, [0.5])
