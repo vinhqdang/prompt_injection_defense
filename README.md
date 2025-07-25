@@ -187,9 +187,9 @@ If you use this code in your research, please cite:
 ```bibtex
 @misc{homomorphic-encryption-ids,
   title={Homomorphic Encryption for Intrusion Detection System},
-  author={Your Name},
-  year={2024},
-  url={https://github.com/your-username/homomorphic-encryption-ids}
+  author={Quang-Vinh Dang},
+  year={2025},
+  url={https://github.com/vinhqdang/Homomorphic_Encryption_IDS}
 }
 ```
 
