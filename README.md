@@ -2,6 +2,8 @@
 
 This project implements a secure Java developer candidate assessment system using Google's Gemini API, with integrated prompt injection detection inspired by the [promptmap](https://github.com/utkusen/promptmap) tool.
 
+**Repository**: https://github.com/vinhqdang/prompt_injection_defense
+
 ## 🎯 Overview
 
 The system evaluates PDF submissions from Java developer candidates using two different approaches:

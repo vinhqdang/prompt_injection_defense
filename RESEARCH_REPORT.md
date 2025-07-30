@@ -712,7 +712,7 @@ The code, datasets, and detailed results from this research are made available a
 
 ## Appendix A: Code Repository
 
-**GitHub Repository**: [https://github.com/vinhqdang/Homomorphic_Encryption_IDS](https://github.com/vinhqdang/Homomorphic_Encryption_IDS)
+**GitHub Repository**: [https://github.com/vinhqdang/prompt_injection_defense](https://github.com/vinhqdang/prompt_injection_defense)
 
 The complete implementation including:
 - Source code for all experiments
