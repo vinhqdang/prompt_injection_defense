@@ -29,3 +29,7 @@ Thumbs.db
 
 # Logs
 *.log
+
+# External repositories (keep their .git but exclude from main repo)
+external_tools/*/
+!external_tools/README.md

@@ -4,9 +4,16 @@ Copy this file to config.py and update with your actual API key
 """
 import os
 
-# Gemini API Configuration
+# API Configuration
 GEMINI_API_KEY = "your-gemini-api-key-here"
 GEMINI_MODEL = "gemini-2.0-flash-exp"
+
+# OpenAI API Configuration  
+OPENAI_API_KEY = "your-openai-api-key-here"
+OPENAI_MODEL = "gpt-3.5-turbo"
+
+# Default model to use ("gemini" or "openai")
+DEFAULT_MODEL_PROVIDER = "openai"
 
 # PDF files path
 PDF_FILES_PATH = "/mnt/c/work/prompt_injection_defense/data"

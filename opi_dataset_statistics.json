@@ -1,0 +1,39 @@
+{
+  "total_samples": 145,
+  "benign_samples": 21,
+  "injection_samples": 124,
+  "attack_types": {
+    "promptmap_style_attack": 8,
+    "opi_combine_attacker": 20,
+    "opi_ignore_attacker": 20,
+    "opi_escape_char_attacker": 20,
+    "opi_system_prompt_summarization_inject_short": 1,
+    "opi_naive_attacker": 20,
+    "opi_system_prompt_grammar_correction_inject_long": 1,
+    "opi_system_prompt_hate_detection_inject": 1,
+    "opi_system_prompt_spam_detection_inject_long": 1,
+    "opi_system_prompt_spam_detection_inject_short": 1,
+    "opi_system_prompt_summarization_inject": 1,
+    "opi_system_prompt_spam_detection_inject": 1,
+    "opi_system_prompt_grammar_correction_inject_short": 1,
+    "opi_fake_comp_attacker": 20,
+    "opi_system_prompt_hate_detection_inject_long": 1,
+    "opi_system_prompt_grammar_correction_inject": 1,
+    "opi_system_prompt_mathematical_reasoning_inject": 1,
+    "opi_system_prompt_sentiment_analysis_inject_short": 1,
+    "opi_system_prompt_sentiment_analysis_inject_long": 1,
+    "opi_system_prompt_sentiment_analysis_inject": 1,
+    "opi_system_prompt_hate_detection_inject_short": 1,
+    "opi_system_prompt_summarization_inject_long": 1
+  },
+  "contexts": {
+    "java_developer_assessment": 123,
+    "system_prompt_summarization": 4,
+    "system_prompt_grammar_correction": 4,
+    "system_prompt_hate_detection": 4,
+    "system_prompt_spam_detection": 4,
+    "system_prompt_mathematical_reasoning": 2,
+    "system_prompt_sentiment_analysis": 4
+  },
+  "sample_distribution": {}
+}
