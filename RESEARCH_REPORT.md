@@ -1,6 +1,7 @@
 # Prompt Injection Vulnerabilities in AI-Based Assessment Systems: A Case Study of Java Developer Evaluation
 
-**Authors:** Claude Code Research Team  
+**Author:** Vinh Dang  
+**Email:** dqvinh87@gmail.com  
 **Date:** July 30, 2025  
 **Institution:** AI Security Research Lab  
 
